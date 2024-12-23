@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 135647972}
   - component: {fileID: 135647973}
   - component: {fileID: 135647974}
+  - component: {fileID: 135647975}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -260,6 +261,7 @@ MonoBehaviour:
   Angle: 0
   Body: {fileID: 135647971}
   Head: {fileID: 1273070105}
+  inventorySystem: {fileID: 0}
 --- !u!114 &135647974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +274,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f854b63563edd1940ac90f7a0a71297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryScript: {fileID: 0}
+--- !u!114 &135647975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135647967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5332877843e6214419f0a51960b2c628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hotbar:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +928,7 @@ GameObject:
   - component: {fileID: 1975343726}
   - component: {fileID: 1975343725}
   - component: {fileID: 1975343724}
+  - component: {fileID: 1975343727}
   m_Layer: 0
   m_Name: Item
   m_TagString: Item
@@ -979,3 +1001,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1975343727
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975343722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

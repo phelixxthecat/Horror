@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class Interact : MonoBehaviour
 {
+    public Inventory inventoryScript;
+    float raycastDistance = 5; //Adjust to suit your use case
 
-    float raycastDistance = 3; //Adjust to suit your use case
-
+    void Start()
+    {
+        inventoryScript = this.GetComponent<Inventory>();
+    }
 	void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // This creates a 'ray' at the Main Camera's Centre Point essentially the centre of the users Screen
@@ -19,15 +23,14 @@ public class Interact : MonoBehaviour
             //Item Raycast Detection
             if (hit.collider.CompareTag("Item"))//Checking if the Raycast has hit a collider with the tag of note
             {
-                
                 if (Input.GetKeyDown(KeyCode.E))//Check if the player has pressed the Interaction button
                 {
-                    
+                    GameObject item = hit.transform.gameObject;
+                    inventoryScript.insertItem(item);
+                    Debug.Log("item grabbed");
+                    inventoryScript.UpdateUI();
+                    Debug.Log("item sotred");
                 }
-            }
-            else if (hit.collider.CompareTag("Interactable"))
-            {
-                //Add a different object here if you choose to want more objects to be able to be detected by the Raycast such as doors etc
             }
 
             else //If nothing at all with an above tag was hit with the Raycast within the specified distance then run this

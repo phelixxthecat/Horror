@@ -10,11 +10,13 @@ public class Player : MonoBehaviour
     public float p_Speed = 5f;
     public float MouseX, MouseY, Angle;
     public Transform Body, Head;
+    public Inventory inventorySystem;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = this.GetComponent<Rigidbody>();
+        inventorySystem = this.GetComponent<Inventory>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
